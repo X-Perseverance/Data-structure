@@ -1,4 +1,3 @@
-// µœ÷æ≤Ã¨À≥–Ú±Ì
 #ifndef __SeqList_h__
 #define __SeqList_h__
 
