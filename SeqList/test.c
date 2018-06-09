@@ -4,17 +4,17 @@
 
 void Menu()
 {
-	printf("********¾²Ì¬Ë³Ğò±í********\n");
-	printf("**       0.ÍË³ö         **\n");
-	printf("**       1.³õÊ¼»¯       **\n");
-	printf("**       2.²åÈë         **\n");
-	printf("**       3.É¾³ı         **\n");
-	printf("**       4.²éÕÒ         **\n");
-	printf("**       5.ĞŞ¸Ä         **\n");
-	printf("**       6.Ã°ÅİÅÅĞò     **\n");
-	printf("**       7.Ñ¡ÔñÅÅĞò     **\n");
-	printf("**       8.¶ş·Ö²éÕÒ     **\n");
-	printf("**       9.Êä³ö         **\n");
+	printf("********é™æ€é¡ºåºè¡¨********\n");
+	printf("**       0.é€€å‡º         **\n");
+	printf("**       1.åˆå§‹åŒ–       **\n");
+	printf("**       2.æ’å…¥         **\n");
+	printf("**       3.åˆ é™¤         **\n");
+	printf("**       4.æŸ¥æ‰¾         **\n");
+	printf("**       5.ä¿®æ”¹         **\n");
+	printf("**       6.å†’æ³¡æ’åº     **\n");
+	printf("**       7.é€‰æ‹©æ’åº     **\n");
+	printf("**       8.äºŒåˆ†æŸ¥æ‰¾     **\n");
+	printf("**       9.è¾“å‡º         **\n");
 	printf("**************************\n");
 }
 
@@ -24,7 +24,7 @@ int main()
 	int op = 0;
 	do{
 		Menu();
-		printf("ÇëÑ¡Ôñ£º");
+		printf("è¯·é€‰æ‹©ï¼š");
 		scanf("%d", &op);
 		switch (op)
 		{
@@ -37,9 +37,9 @@ int main()
 		{
 				  DataType x = 0;
 				  size_t pos = 0;
-				  printf("ÇëÊäÈëÒª²åÈëµÄÎ»ÖÃ£º");
+				  printf("è¯·è¾“å…¥è¦æ’å…¥çš„ä½ç½®ï¼š");
 				  scanf("%d", &pos);
-				  printf("ÇëÊäÈëÒª²åÈëµÄÖµ£º");
+				  printf("è¯·è¾“å…¥è¦æ’å…¥çš„å€¼ï¼š");
 				  scanf("%d", &x);
 				  SeqList_Insert(&pSeq, pos, x);
 		}
@@ -47,7 +47,7 @@ int main()
 		case 3:
 		{
 				  size_t pos = 0;
-				  printf("ÇëÊäÈëÒªÉ¾³ıµÄÎ»ÖÃ£º");
+				  printf("è¯·è¾“å…¥è¦åˆ é™¤çš„ä½ç½®ï¼š");
 				  scanf("%d", &pos);
 				  SeqList_Delete(&pSeq, pos);
 		}
@@ -55,7 +55,7 @@ int main()
 		case 4:
 		{
 				  DataType x = 0;
-				  printf("ÇëÊäÈëÒª²éÕÒµÄÖµ£º");
+				  printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„å€¼ï¼š");
 				  scanf("%d", &x);
 				  SeqList_Search(&pSeq, x);
 		}
@@ -64,9 +64,9 @@ int main()
 		{
 				  DataType x = 0;
 				  size_t pos = 0;
-				  printf("ÇëÊäÈëÒªĞŞ¸ÄµÄÎ»ÖÃ£º");
+				  printf("è¯·è¾“å…¥è¦ä¿®æ”¹çš„ä½ç½®ï¼š");
 				  scanf("%d", &pos);
-				  printf("ÇëÊäÈëĞŞ¸ÄºóµÄÖµ£º");
+				  printf("è¯·è¾“å…¥ä¿®æ”¹åçš„å€¼ï¼š");
 				  scanf("%d", &x);
 				  SeqList_Modify(&pSeq, pos, x);
 		}
@@ -80,7 +80,7 @@ int main()
 		case 8:
 		{
 				   DataType x = 0;
-				   printf("ÇëÊäÈëÒª²éÕÒµÄÖµ£º");
+				   printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„å€¼ï¼š");
 				   scanf("%d", &x);
 				   Binary_Search(&pSeq, x);
 		}
@@ -89,7 +89,7 @@ int main()
 			SeqList_Print(&pSeq);
 			break;
 		default:
-			printf("ÇëÖØĞÂÑ¡Ôñ...\n");
+			printf("è¯·é‡æ–°é€‰æ‹©......\n");
 			break;
 		}
 	} while (op);

@@ -2,16 +2,16 @@
 
 #include "SeqList.h"
 
-//³õÊ¼»¯
+//åˆå§‹åŒ–
 void SeqList_Init(SeqList *pSeq)
 {
 	assert(pSeq);
 	memset(pSeq, 0, N*sizeof(DataType));
 	pSeq->size = 0;
-	printf("³õÊ¼»¯³É¹¦\n");
+	printf("åˆå§‹åŒ–æˆåŠŸ\n");
 }
 
-//½»»»
+//äº¤æ¢
 void Swap(DataType *a, DataType *b)
 {
 	DataType tmp = *a;
@@ -19,13 +19,13 @@ void Swap(DataType *a, DataType *b)
 	*b = tmp;
 }
 
-//²åÈë
+//æ’å…¥
 void SeqList_Insert(SeqList *pSeq, size_t pos, DataType x)
 {
 	assert(pSeq);
 	if (pSeq->size == N)
 	{
-		printf("¸ÃË³Ğò±íÒÑÂú\n");
+		printf("è¯¥é¡ºåºè¡¨å·²æ»¡\n");
 	}
 	else
 	{
@@ -36,17 +36,17 @@ void SeqList_Insert(SeqList *pSeq, size_t pos, DataType x)
 		}
 		pSeq->a[pos] = x;
 		pSeq->size++;
-		printf("²åÈë³É¹¦\n");
+		printf("æ’å…¥æˆåŠŸ\n");
 	}
 }
 
-//É¾³ı
+//åˆ é™¤
 void SeqList_Delete(SeqList *pSeq, size_t pos)
 {
 	assert(pSeq);
 	if (pSeq->size == 0)
 	{
-		printf("¸ÃË³Ğò±íÎª¿Õ\n");
+		printf("è¯¥é¡ºåºè¡¨ä¸ºç©º\n");
 	}
 	else
 	{
@@ -56,17 +56,17 @@ void SeqList_Delete(SeqList *pSeq, size_t pos)
 			pSeq->a[i - 1] = pSeq->a[i];
 		}
 		pSeq->size--;
-		printf("É¾³ı³É¹¦\n");
+		printf("åˆ é™¤æˆåŠŸ\n");
 	}
 }
 
-//É¾³ıË³Ğò±íÖĞµÚÒ»¸ö³öÏÖµÄÖ¸¶¨ÔªËØ
+//åˆ é™¤é¡ºåºè¡¨ä¸­ç¬¬ä¸€ä¸ªå‡ºç°çš„æŒ‡å®šå…ƒç´ 
 void SeqList_Remove(SeqList *pSeq, DataType x)
 {
 	assert(pSeq);
 	if (pSeq->size == 0)
 	{
-		printf("¸ÃË³Ğò±íÎª¿Õ\n");
+		printf("è¯¥é¡ºåºè¡¨ä¸ºç©º\n");
 		return;
 	}
 	int i = 0;
@@ -80,23 +80,23 @@ void SeqList_Remove(SeqList *pSeq, DataType x)
 				pSeq->a[j - 1] = pSeq->a[j];
 			}
 			pSeq->size--;
-			printf("É¾³ı³É¹¦\n");
+			printf("åˆ é™¤æˆåŠŸ\n");
 			return;
 		}
 	}
 	if (i == (int)pSeq->size)
 	{
-		printf("¸ÃË³Ğò±íÃ»ÓĞ´ËÖµ\n");
+		printf("è¯¥é¡ºåºè¡¨æ²¡æœ‰æ­¤å€¼\n");
 	}
 }
 
-//É¾³ıË³Ğò±íÖĞËùÓĞÖ¸¶¨µÄÔªËØ
+//åˆ é™¤é¡ºåºè¡¨ä¸­æ‰€æœ‰æŒ‡å®šçš„å…ƒç´ 
 void SeqList_RemoveAll(SeqList *pSeq, DataType x)
 {
 	assert(pSeq);
 	if (pSeq->size == 0)
 	{
-		printf("¸ÃË³Ğò±íÎª¿Õ\n");
+		printf("è¯¥é¡ºåºè¡¨ä¸ºç©º\n");
 		return;
 	}
 	int p = 0;
@@ -115,50 +115,50 @@ void SeqList_RemoveAll(SeqList *pSeq, DataType x)
 		}
 	}
 	pSeq->size -= count;
-	printf("É¾³ı³É¹¦\n");
+	printf("åˆ é™¤æˆåŠŸ\n");
 }
 
-//²éÕÒ
+//æŸ¥æ‰¾
 void SeqList_Search(SeqList *pSeq, DataType x)
 {
 	assert(pSeq);
 	if (pSeq->size == 0)
 	{
-		printf("¸ÃË³Ğò±íÎª¿Õ\n");
+		printf("è¯¥é¡ºåºè¡¨ä¸ºç©º\n");
 		return;
 	}
 	for (int i = 0; i < (int)pSeq->size; i++)
 	{
 		if (pSeq->a[i] == x)
 		{
-			printf("ÕÒµ½ÁË£¬ÏÂ±êÎª%d\n", i);
+			printf("æ‰¾åˆ°äº†ï¼Œä¸‹æ ‡ä¸º%d\n", i);
 			return;
 		}
 	}
-	printf("Î´ÕÒµ½\n");
+	printf("æœªæ‰¾åˆ°\n");
 }
 
-//ĞŞ¸Ä
+//ä¿®æ”¹
 void SeqList_Modify(SeqList *pSeq, size_t pos, DataType x)
 {
 	assert(pSeq);
 	if (pSeq->size == 0)
 	{
-		printf("¸ÃË³Ğò±íÎª¿Õ\n");
+		printf("è¯¥é¡ºåºè¡¨ä¸ºç©º\n");
 		return;
 	}
 	assert(pos < pSeq->size);
 	pSeq->a[pos] = x;
-	printf("ĞŞ¸Ä³É¹¦\n");
+	printf("ä¿®æ”¹æˆåŠŸ\n");
 }
 
-//Êä³ö
+//è¾“å‡º
 void SeqList_Print(SeqList *pSeq)
 {
 	assert(pSeq);
 	if (pSeq->size == 0)
 	{
-		printf("¸ÃË³Ğò±íÎª¿Õ\n");
+		printf("è¯¥é¡ºåºè¡¨ä¸ºç©º\n");
 		return;
 	}
 	for (int i = 0; i < (int)pSeq->size; i++)
@@ -168,13 +168,13 @@ void SeqList_Print(SeqList *pSeq)
 	printf("\n");
 }
 
-//Ã°ÅİÅÅĞò
+//å†’æ³¡æ’åº
 void Bubble_Sort(SeqList *pSeq)
 {
 	assert(pSeq);
 	if (pSeq->size == 0)
 	{
-		printf("¸ÃË³Ğò±íÎª¿Õ\n");
+		printf("è¯¥é¡ºåºè¡¨ä¸ºç©º\n");
 		return;
 	}
 	for (int i = 0; i < (int)pSeq->size - 1; i++)
@@ -194,16 +194,16 @@ void Bubble_Sort(SeqList *pSeq)
 			break;
 		}
 	}
-	printf("ÅÅĞò³É¹¦\n");
+	printf("æ’åºæˆåŠŸ\n");
 }
 
-//Ñ¡ÔñÅÅĞò
+//é€‰æ‹©æ’åº
 void Select_Sort(SeqList *pSeq)
 {
 	assert(pSeq);
 	if (pSeq->size == 0)
 	{
-		printf("¸ÃË³Ğò±íÎª¿Õ\n");
+		printf("è¯¥é¡ºåºè¡¨ä¸ºç©º\n");
 		return;
 	}
 	int left = 0;
@@ -228,9 +228,9 @@ void Select_Sort(SeqList *pSeq)
 		{
 			Swap(&pSeq->a[min], &pSeq->a[left]);
 		}
-		if (max == left)
+		if (max == left) //è‹¥maxå’Œleftç›¸ç­‰ï¼Œåˆ™ç»è¿‡ä¸Šä¸€æ­¥äº¤æ¢ï¼Œå¯¼è‡´åŸmaxå¤„ä¸ºæœ€å°å€¼ï¼Œè€Œminå¤„ä¸ºæœ€å¤§å€¼
 		{
-			max = min;
+			max = min; //æ›´æ–°max,è®©å…¶ä½ç½®ä¸ºæœ€å¤§å€¼
 		}
 		if (max != right)
 		{
@@ -239,16 +239,16 @@ void Select_Sort(SeqList *pSeq)
 		left++;
 		right--;
 	}
-	printf("ÅÅĞò³É¹¦\n");
+	printf("æ’åºæˆåŠŸ\n");
 }
 
-//¶ş·Ö²éÕÒ
+//äºŒåˆ†æŸ¥æ‰¾
 void Binary_Search(SeqList *pSeq, DataType x)
 {
 	assert(pSeq);
 	if (pSeq->size == 0)
 	{
-		printf("¸ÃË³Ğò±íÎª¿Õ\n");
+		printf("è¯¥é¡ºåºè¡¨ä¸ºç©º\n");
 		return;
 	}
 	int left = 0;
@@ -266,9 +266,9 @@ void Binary_Search(SeqList *pSeq, DataType x)
 		}
 		else
 		{
-			printf("ÕÒµ½ÁË£¬ÏÂ±êÎª%d\n", mid);
+			printf("æ‰¾åˆ°äº†ï¼Œä¸‹æ ‡ä¸º%d\n", mid);
 			return;
 		}
 	}
-	printf("Î´ÕÒµ½\n");
+	printf("æœªæ‰¾åˆ°\n");
 }
