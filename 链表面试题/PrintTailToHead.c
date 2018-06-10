@@ -1,6 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-
-//方法一：非递归
+//鏂规硶涓�锛氶潪閫掑綊
 void SLitsPrintTailToHead(SListNode* pHead)
 {
 	assert(pHead);
@@ -18,7 +16,7 @@ void SLitsPrintTailToHead(SListNode* pHead)
 	printf("\n");
 }
 
-//方法二：递归
+//鏂规硶浜岋細閫掑綊
 void SLitsPrintTailToHeadR(SListNode* pHead)
 {
 	if (pHead == NULL)
